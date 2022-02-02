@@ -123,7 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 50
-  hitEffect: {fileID: 0}
+  hitEffect: {fileID: 1594581071166237185, guid: 95d23ae3c0a39ca4e92d2a3fa4c8a81b,
+    type: 3}
   distance: 1
   damage: 1
   WhatIsSolid:

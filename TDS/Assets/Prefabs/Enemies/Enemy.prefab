@@ -29,13 +29,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3714856800225814101}
-  m_LocalRotation: {x: 0.00052356074, y: 0, z: 0, w: 0.9999999}
-  m_LocalPosition: {x: -15.381338, y: -5.304423, z: 35.75}
-  m_LocalScale: {x: 23.608286, y: 23.608286, z: 23.608286}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 18.266731, y: 20.14817, z: 26.370188}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0.06, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3714856800225814096
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,12 +74,12 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 10
+  m_SortingOrder: 11
   m_Sprite: {fileID: 2731795287329381114, guid: 11c982e6aaa13d749a7c9918c03d477e,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
-  m_FlipY: 0
+  m_FlipY: 1
   m_DrawMode: 0
   m_Size: {x: 0.104003906, y: 0.12841797}
   m_AdaptiveModeThreshold: 0.5
@@ -170,6 +170,9 @@ MonoBehaviour:
   healthIncrease: 0.4
   ShowDamage: {fileID: 5424255361282282010, guid: 43096b261b5385a46a226d17a5f61ce5,
     type: 3}
+  DropHealth: {fileID: 4008595044477985403, guid: db88c79e6aafa404891b6e7048e6f99f,
+    type: 3}
+  DropKey: {fileID: 3419706715205357791, guid: fc4c626e36d83d14a9664eaceaef99d1, type: 3}
 --- !u!114 &-7325298487466126503
 MonoBehaviour:
   m_ObjectHideFlags: 0

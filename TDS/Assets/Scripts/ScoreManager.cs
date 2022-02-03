@@ -7,6 +7,7 @@ public class ScoreManager : MonoBehaviour
 {
     public int score;
     public Text scoreDisplay;
+    
 
     private void Update()
     {
@@ -17,4 +18,5 @@ public class ScoreManager : MonoBehaviour
     {
         score++;
     }
+
 }

@@ -169,6 +169,8 @@ MonoBehaviour:
   healthIncrease: 0.4
   ShowDamage: {fileID: 5424255361282282010, guid: 43096b261b5385a46a226d17a5f61ce5,
     type: 3}
+  DropHealth: {fileID: 4008595044477985403, guid: db88c79e6aafa404891b6e7048e6f99f,
+    type: 3}
 --- !u!114 &1171890439239613719
 MonoBehaviour:
   m_ObjectHideFlags: 0

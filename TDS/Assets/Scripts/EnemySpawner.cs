@@ -8,23 +8,20 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private float spawnRadius = 7, time = 1.5f;
     public GameObject[] enemies;
-    
+    public int EnemyCounter;
+    public float timer = 0;
 
-    public void Start()
+    private void Update()
     {
-        StartCoroutine(SpawnAnEnemy());
-    }
-
-    
-    IEnumerator SpawnAnEnemy()
-    {
-        while(true)
+        timer = timer + Time.deltaTime;
+        if (EnemyCounter <= 0 && timer >= 5)
         {
-            Vector2 spawnPos = GameObject.Find("Player").transform.position;
+            Vector2 spawnPos =   GameObject.Find("Player").transform.position;;
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
             Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
-            yield return new WaitForSeconds(time);
-            StartCoroutine(SpawnAnEnemy());
+            EnemyCounter++;
+            timer = 0;
+
         }
     }
 }

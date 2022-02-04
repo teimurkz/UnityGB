@@ -14,7 +14,6 @@ public class PlayerTakeDamage : MonoBehaviour
     public Sprite EmptyHeart;
 
     public GameObject KeyIcon;
-    public GameObject WallEffect;
     private bool KeyButtonPushed;
 
 
@@ -76,7 +75,6 @@ public class PlayerTakeDamage : MonoBehaviour
     {
         if (other.CompareTag("Door") && KeyButtonPushed && KeyIcon.activeInHierarchy)
         {
-            Instantiate(WallEffect, other.transform.position, Quaternion.identity);
             KeyIcon.SetActive(false);
             other.gameObject.SetActive(false);
             KeyButtonPushed = false;
@@ -95,6 +93,7 @@ public class PlayerTakeDamage : MonoBehaviour
             KeyIcon.SetActive(true);
             Destroy(other.gameObject);
         }
+
     }
 
     public void ChangeHealth(int healthValue)

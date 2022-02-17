@@ -6,6 +6,7 @@ public class Shooting : MonoBehaviour
 {
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject granadePrefab;
 
     public float bulletForce = 20f;
 
@@ -15,12 +16,24 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
         }
+
+        if (Input.GetButtonDown("Fire2"))
+        {
+            Granade();
+        }
     }
 
     void Shoot()
     {
-        GameObject bullet = Instantiate(bulletPrefab,firePoint.position,firePoint.rotation);
-        Rigidbody2D rb = bullet.GetComponent<Rigidbody2D>();
+        GameObject granade = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = granade.GetComponent<Rigidbody2D>();
+        rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
+    }
+
+    void Granade()
+    {
+        GameObject granade = Instantiate(granadePrefab, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = granade.GetComponent<Rigidbody2D>();
         rb.AddForce(firePoint.up * bulletForce, ForceMode2D.Impulse);
     }
 }

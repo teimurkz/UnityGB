@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 
 public class Granade : MonoBehaviour
@@ -15,8 +14,6 @@ public class Granade : MonoBehaviour
         countdown = delay;
         
     }
-
-    // Update is called once per frame
     void Update()
     {
         countdown -= Time.deltaTime;
@@ -25,15 +22,20 @@ public class Granade : MonoBehaviour
             Explode();
             hasExploded = true;
         }
+
+        
     }
+
+ 
     void Explode()
     {
-        Instantiate(explotionEffect, transform.position, transform.rotation);
         Collider2D[] objects = Physics2D.OverlapCircleAll(transform.position, radius);
         foreach (Collider2D obj in objects)
         {
             Vector2 direction = obj.transform.position - transform.position;
             obj.GetComponent<Rigidbody2D>().AddForce(direction * force);
+            GameObject effect = Instantiate(explotionEffect, transform.position, transform.rotation);
+            Destroy(effect,0.1f);
             Destroy(gameObject);
         }
     }

@@ -18,9 +18,6 @@ public class EnemyAI : MonoBehaviour
     public float radius = 15;
 
 
-
-
-
     private void Start()
     {
         agent = GetComponent<NavMeshAgent>();

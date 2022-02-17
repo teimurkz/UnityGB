@@ -12,6 +12,7 @@ TagManager:
   - DoorWalls
   - RoomPoint
   - Wall
+  - Texture
   layers:
   - Default
   - TransparentFX
@@ -24,7 +25,7 @@ TagManager:
   - Solid
   - Player
   - Wall
-  - 
+  - Texture
   - 
   - 
   - 

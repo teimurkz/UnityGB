@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3714856800225814096}
   - component: {fileID: 3714856800225814097}
   - component: {fileID: 3714856800225814098}
+  - component: {fileID: 4667818512312731530}
   - component: {fileID: 3714856800225814099}
   - component: {fileID: 3714856800225814100}
   - component: {fileID: -7325298487466126503}
@@ -101,7 +102,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000000037252903, y: 0}
+  m_Offset: {x: 0.39860058, y: 1.3061898}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -112,7 +113,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.1404495, y: 0.16206084}
+  m_Size: {x: 0.30373192, y: 0.31009626}
   m_EdgeRadius: 0
 --- !u!50 &3714856800225814098
 Rigidbody2D:
@@ -135,6 +136,19 @@ Rigidbody2D:
   m_SleepingMode: 2
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4667818512312731530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3714856800225814101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5acf6dc694a2db74691945950a2feae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
 --- !u!114 &3714856800225814099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152,6 +166,8 @@ MonoBehaviour:
   StartTimeBtwShots: 3
   projectile: {fileID: 1479203246808298105, guid: 8cd742d0d6be13448ad8119930375d3d,
     type: 3}
+  dist: 0
+  radius: 15
 --- !u!114 &3714856800225814100
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,6 +220,6 @@ NavMeshAgent:
   m_AutoBraking: 1
   m_AutoRepath: 1
   m_Height: 0.12841797
-  m_BaseOffset: 0.064208984
+  m_BaseOffset: 0.1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4

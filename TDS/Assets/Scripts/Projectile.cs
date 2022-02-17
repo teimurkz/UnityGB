@@ -10,7 +10,6 @@ public class Projectile : MonoBehaviour
     private Transform player;
     private Vector2 target;
     
-    public GameObject hitEffect;
     public float distance;
     public int damage;
     public LayerMask WhatIsSolid;
@@ -37,20 +36,24 @@ public class Projectile : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             DestroyProjectile();
+        }if (other.CompareTag("Wall"))
+        {
+            Debug.Log("Wall");
         }
         
         {
             RaycastHit2D hitInfo = Physics2D.Raycast(transform.position,transform.up,distance,WhatIsSolid);
+            
             if (hitInfo.collider != null)
             {
-                if (hitInfo.collider.CompareTag("Player"))
+                if (hitInfo.collider.CompareTag("Player") )
                 {
                     hitInfo.collider.GetComponent<PlayerTakeDamage>().TakeDamage(damage);
+                
                 }
+               
             }
-            GameObject effect = Instantiate(hitEffect,transform.position, Quaternion.identity);
-            Destroy(effect,0.1f); 
-            Destroy(gameObject);
+            
         }
     }
     void DestroyProjectile()

@@ -16,7 +16,7 @@ public class EnemySpawner : MonoBehaviour
         timer = timer + Time.deltaTime;
         if (EnemyCounter <= 0 && timer >= 5)
         {
-            Vector2 spawnPos =   GameObject.Find("Player").transform.position;;
+            Vector2 spawnPos =   GameObject.Find("Player").transform.position;
             spawnPos += Random.insideUnitCircle.normalized * spawnRadius;
             Instantiate(enemies[Random.Range(0, enemies.Length)], spawnPos, Quaternion.identity);
             EnemyCounter++;

@@ -122,10 +122,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f39c48bba172aa44aa105bbbef39421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 50
   hitEffect: {fileID: 0}
   distance: 1
   damage: 1
   WhatIsSolid:
     serializedVersion: 2
     m_Bits: 256
+  speed: 50

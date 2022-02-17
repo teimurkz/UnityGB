@@ -31,7 +31,7 @@ public class EnemyHealthAndTakeDamage : MonoBehaviour
             Destroy(gameObject);
             if (Random.Range (0, 100) < 25) {
                 Instantiate(DropHealth, new Vector3(transform.position.x, transform.position.y,transform.position.z), Quaternion.identity);
-            }else if (Random.Range (0, 100) < 100)
+            }else if (Random.Range (0, 100) < 15)
             {
                 Instantiate(DropKey, new Vector3(transform.position.x, transform.position.y,transform.position.z), Quaternion.identity);
             }

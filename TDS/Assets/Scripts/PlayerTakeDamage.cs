@@ -15,7 +15,7 @@ public class PlayerTakeDamage : MonoBehaviour
 
     public GameObject KeyIcon;
     private bool KeyButtonPushed;
-
+    public GameObject ShowDamage;
 
     private void FixedUpdate()
     {
@@ -64,6 +64,10 @@ public class PlayerTakeDamage : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
+        Vector2 damagePos = new Vector2(transform.position.x, transform.position.y + 4f);
+        GameObject delete  = Instantiate(ShowDamage , damagePos,Quaternion.identity);
+        Destroy(delete,1f);
+        ShowDamage.GetComponentInChildren<ShowDamage>().damage = damage;
     }
 
     public void OnKeyButtonDown()

@@ -1,50 +1,60 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class EnemyAI : MonoBehaviour
 {
     public float speed;
-    public float stoppingDistance;
-    public float retreatDistance;
-    public Transform player;
-    
+
     public float timeBtwShots;
     public float StartTimeBtwShots;
 
+
     public GameObject projectile;
-        
-        private void Start()
+    private Transform target;
+    private NavMeshAgent agent;
+
+    public float dist;
+    public float radius = 15;
+
+
+
+
+    private void Start()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-        timeBtwShots = StartTimeBtwShots;
+        target = GameObject.FindGameObjectWithTag("Player").transform;
+        agent.updateRotation = false;
+        agent.updateUpAxis = false;
+        agent = GetComponent<NavMeshAgent>();
     }
+
 
     void Update()
     {
-        if (Vector2.Distance(transform.position, player.position) > stoppingDistance)
+        dist = Vector3.Distance(target.transform.position, transform.position);
+
+
+        if (dist > radius)
         {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
-        }
-        else if (Vector2.Distance(transform.position, player.position) < stoppingDistance &&
-                 Vector2.Distance(transform.position, player.position) > retreatDistance)
-        {
-            transform.position = this.transform.position;
-        }else if (Vector2.Distance(transform.position, player.position) < retreatDistance)
-        {
-            transform.position = Vector2.MoveTowards(transform.position, player.position, -speed * Time.deltaTime);
+            agent.SetDestination(transform.position);
         }
 
-        if (timeBtwShots <= 0)
+        if (dist < radius)
         {
-            Instantiate(projectile,transform.position,Quaternion.identity);
+            agent.SetDestination(target.position);
+        }
+
+        if (timeBtwShots <= 0 && dist < radius)
+        {
+            Instantiate(projectile, transform.position, Quaternion.identity);
             timeBtwShots = StartTimeBtwShots;
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
         }
-        
-        
+      
     }
 }

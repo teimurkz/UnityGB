@@ -147,12 +147,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 16a590b3e2995a44eaf92e7cb6bf0364, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
-  timeBtwShots: 0
-  StartTimeBtwShots: 3
+  speed: 3
+  timeBtwShots: 3
+  startTimeBtwShots: 4
   projectile: {fileID: 1479203246808298105, guid: 8cd742d0d6be13448ad8119930375d3d,
     type: 3}
-  dist: 0
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  dist: 4
   radius: 15
 --- !u!114 &3714856800225814100
 MonoBehaviour:

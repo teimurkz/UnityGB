@@ -180,10 +180,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 3
   timeBtwShots: 3
-  StartTimeBtwShots: 3
+  startTimeBtwShots: 4
   projectile: {fileID: 1479203246808298105, guid: 8cd742d0d6be13448ad8119930375d3d,
     type: 3}
-  dist: 0
+  target: {fileID: 0}
+  agent: {fileID: 0}
+  dist: 4
   radius: 15
 --- !u!114 &5272081721895760507
 MonoBehaviour:

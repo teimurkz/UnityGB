@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -9,12 +7,12 @@ public class EnemyAI : MonoBehaviour
     public float speed;
 
     public float timeBtwShots;
-    public float StartTimeBtwShots;
+    public float startTimeBtwShots;
 
 
     public GameObject projectile;
-    private Transform target;
-    private NavMeshAgent agent;
+    public  Transform target;
+    public NavMeshAgent agent;
 
     public float dist;
     public float radius = 15;
@@ -22,12 +20,13 @@ public class EnemyAI : MonoBehaviour
 
 
 
+
     private void Start()
     {
+        agent = GetComponent<NavMeshAgent>();
         target = GameObject.FindGameObjectWithTag("Player").transform;
         agent.updateRotation = false;
         agent.updateUpAxis = false;
-        agent = GetComponent<NavMeshAgent>();
     }
 
 
@@ -49,12 +48,14 @@ public class EnemyAI : MonoBehaviour
         if (timeBtwShots <= 0 && dist < radius)
         {
             Instantiate(projectile, transform.position, Quaternion.identity);
-            timeBtwShots = StartTimeBtwShots;
+            timeBtwShots = startTimeBtwShots;
         }
         else
         {
             timeBtwShots -= Time.deltaTime;
         }
-      
+        
     }
+
+  
 }
